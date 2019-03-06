@@ -1,0 +1,146 @@
+<!-- Bootstrap and jquery mobile-->
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- CSS-->
+<link rel="stylesheet" href="css/Login.css">
+<link rel="stylesheet" href="css/Chef.css">
+<!-- Javascript if logged in -->
+<%if (success == true) { %>
+<script src="javascripts/Get_ChefProducts.js"></script>
+<script src="javascripts/ChefUpdate.js"></script>
+<script src="javascripts/StockOverView.js"></script>
+<% } %>
+
+<body>
+
+
+<!-- Start of first page: #Cook Page-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div data-role="page" id="Cook">
+
+
+	<!-- Header Design-->
+<div div data-role="header" id="header">
+	<img id="HeaderImg" src="images/Logo.png" style="">
+</div>
+
+	<!-- Checks session and access -->
+<%if (success == true) { %>
+  <%if (access == "Cook") { %>
+	<div role="main" class="ui-content">
+
+
+    <section id="breadcrumb">
+      <div class="container"style="">
+        <ol class="breadcrumb">
+          <li class="active">Chef Dashboard</li>
+        </ol>
+      </div>
+    </section>
+
+	<!-- Alerts for stock low or added called in  Chef Update -->
+    <section id="breadcrumb">
+      <div class="container"style="">
+        <div id="alert">
+        <div>
+      </div>
+    </section>
+
+
+        <div class="panel panel-default" id="ChefPanel" style="">
+          <div class="panel-heading" ">
+            <h3 class="panel-title">Products</h3>
+          </div>
+
+					<!-- Inner html changed in Get_ChefProducts -->
+          <div class="panel-body" id="Productsdiv">
+
+          </div>
+          </div>
+
+			<!-- Spacing between sticky footer -->
+      <div style="height:100px;">
+        </div>
+
+		<!-- StickyFooter -->
+   <div data-role="footer" id="Cheffooter">
+   	<div data-role="navbar" id="footerNav">
+       <ul id="MenuBar">
+       <li ><a href="/Cook" style="background: rgb(85, 98, 112,0.8);  break-word; border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/Home.png" alt="HomeIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/>Home</a></li>
+       <li ><a href="#Overview" style="background: rgb(85, 98, 112,0.8);  break-word; border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/Bar-Chart.png" alt="Bar-ChartIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/>View Stock Overview</a></li>
+       <li ><a href="/Logout" style="background: rgb(85, 98, 112,0.8);  border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/return.png" alt="LogoutIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/>Logout</a></li>
+   	 </ul>
+   	</div><!-- /navbar -->
+   </div><!-- /navbar -->
+
+ </div>
+</div><!-- /page one cook -->
+
+<!-- /page two stock table -->
+<div data-role="page" id="Overview" data-theme="a" data-dom-cache="true">
+
+	<!-- Header Design-->
+  <div div data-role="header" id="header">
+  	<img id="HeaderImg" src="images/Logo.png" style="">
+  </div>
+  <div role="main" class="ui-content">
+
+
+    <section id="breadcrumb">
+      <div class="container"style="">
+        <ol class="breadcrumb">
+          <li class="active">Chef Dashboard</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="breadcrumb">
+      <div class="container"style="">
+        <div id="alert">
+        <div>
+      </div>
+    </section>
+
+      <!-- Stock overview -->
+    <div class="panel panel-default" id="StockOverView">
+        <div class="panel-heading">
+          <h3 class="panel-title">Stock overview</h3>
+        </div>
+        <div class="panel-body">
+    <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+       <th style= "padding: 10px;">Name</th>
+       <th style= "padding: 10px;">Type</th>
+       <th style= "padding: 10px;">Enabled</th>
+       <th style= "padding: 10px;">Stock</th>
+    </tr>
+    </thead>
+		<!-- Appeneded to have stock table content (Stock over view)-->
+    <tbody></tbody>
+    </div>
+    </div>
+<!-- StickyFooter -->
+    <div data-role="footer" id="Cheffooter">
+    	<div data-role="navbar" id="footerNav">
+        <ul id="MenuBar">
+        <li ><a href="/Cook" style="background: rgb(85, 98, 112,0.8);  break-word; border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/Home.png" alt="HomeIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/>Home</a></li>
+        <li ><a href="#" style="background: rgb(85, 98, 112,0.8);  break-word; border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/Bar-Chart.png" alt="Bar-ChartIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/>View Stock Overview</a></li>
+        <li ><a href="/Logout" style="background: rgb(85, 98, 112,0.8);  border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/return.png" alt="LogoutIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/>Logout</a></li>
+    	 </ul>
+    	</div><!-- /navbar -->
+    </div><!-- /navbar -->
+
+
+
+</div>
+<% } %>
+<% } %>
+</div><!-- /page two cook -->
+
+</body>

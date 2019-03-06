@@ -1,0 +1,54 @@
+#Cheffooter{
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   margin-top: 300px;
+   text-align: center;
+}
+
+#ChefPanel{
+  width:85%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#StockOverView{
+  width:85%;
+  margin:0 auto;
+}
+
+#Tabs{
+    width:85%;
+    margin: 0 auto;
+}
+
+#MenuBar{
+  height:500px;
+}
+
+@media only screen and (max-width: 1265px) {
+
+  #ChefPanel{
+    width:100%;
+  }
+  #Tabs{
+    width:100%;
+  }
+
+  #StockOverView{
+    width:95%;
+  }
+
+}
+
+@media only screen and (max-width: 983px) {
+
+  #ChefPanel{
+    width:85%;
+  }
+  #Tabs{
+    width:85%;
+  }
+
+}

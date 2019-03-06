@@ -1,0 +1,50 @@
+nav {
+  width: 100%;
+  max-width: 90%;
+  border-radius: 10px;
+  background: white;
+  margin: 3em auto;
+  padding: 2em;
+  border-style: solid;
+  border-width: 2.5px;
+  border-color: #0e6ea4;
+  margin-bottom: 3%;
+}
+
+li a:hover{
+color:#000000;
+text-decoration : none;
+}
+
+ul {
+    list-style-type: none;
+    padding: .4em;
+    text-align: center;
+}
+
+nav li {
+  display: inline;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+nav li:first-child {
+    float:left;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+nav li:last-child {
+    float:right;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+.special21 {
+  position: relative;
+}
+
+.navimg:hover {
+}

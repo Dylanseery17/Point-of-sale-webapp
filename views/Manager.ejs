@@ -1,0 +1,273 @@
+<!-- Bootstrap and jquery mobile-->
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- CSS -->
+<link rel="stylesheet" href="css/Login.css">
+<link rel="stylesheet" href="css/Chef.css">
+<link rel="stylesheet" href="css/ManagerPage.css">
+
+<!-- Javascript if logged in -->
+<%if (success == true) { %>
+<script src="javascripts/GetUsersManager.js"></script>
+<script src="javascripts/GetOrdersManager.js"></script>
+<script src="javascripts/GetProductsManager.js"></script>
+<% } %>
+<body>
+
+
+
+<!-- Start of ManagerPage Show orders/sales -->
+<div data-role="page" id="Sales" data-theme="a">
+
+
+  <div div data-role="header" id="header">
+    <img id="HeaderImg" src="images/Logo.png" style="">
+  </div>
+<!-- Checks session and access -->
+<%if (success == true) { %>
+  <%if (access == "Manager") { %>
+  <div role="main" class="ui-content">
+
+    <section id="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">Managers Dashboard</li>
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- break down of table and dashboard -->
+    <section id="main">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-3">
+
+             <div class="well">
+               <h4 >Welcome <%= manager %></h4>
+             </div>
+
+             <div class="list-group">
+               <a href="index.html" class="list-group-item active main-color-bg" style="Background-color:#556270; text-shadow:none;">
+                  Dashboard
+               </a>
+               <!-- Appeneded in GetOrdersManager.js -->
+               <a href="#Users" class="list-group-item">Staff <span class="badge" id="StaffNo">203</span></a>
+               <a href="#Product" class="list-group-item">Products <span class="badge" id="ProductsNo">12</span></a>
+               <a href="" class="list-group-item">Orders <span class="badge" id="OrdersNo">3023</span></a>
+             </div>
+
+
+           </div>
+
+               <div class="table-responsive">
+                 <table class="table" style="Background-color:white;">
+                   <div class="panel-heading main-color-bg" style="Background-color:#556270; text-shadow:none; color:white; border: 1px solid white;">
+                     <h3 class="panel-title" >Latests Orders</h3>
+                   </div>
+                    <thead>
+                       <tr>
+                         <th scope="col"style="padding-left:20px;">Clerk</th>
+                         <th scope="col">Products amount</th>
+                         <th scope="col">Total Price</th>
+                         <th scope="col">Date</th>
+                       </tr>
+                     </thead>
+
+                     <!-- Appeneded in GetOrdersManager.js -->
+                     <tbody id="tbody">
+
+                    </tbody>
+                 </table>
+             </div>
+
+           </div>
+</section>
+      <!-- Sepeate from sticky footer -->
+      <div style="height:100px;">
+        </div>
+
+
+    <!-- sticky footer -->
+<div data-role="footer" id="Cheffooter">
+  <div data-role="navbar" id="footerNav">
+    <ul id="MenuBar">
+    <li ><a href="" style="background: rgb(85, 98, 112,0.8);  break-word; border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/Home.png" alt="HomeIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/>Home</a></li>
+    <li ><a href="/Logout" style="background: rgb(85, 98, 112,0.8);  border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/return.png" alt="LogoutIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/>Logout</a></li>
+   </ul>
+  </div><!-- /navbar -->
+</div><!-- /navbar -->
+</div>
+<% } %>
+<% } %>
+</div><!-- /page one manager-->
+
+<!-- Start of second page: #Users manager -->
+<div data-role="page" id="Users" data-theme="a">
+
+
+  <div div data-role="header" id="header">
+    <img id="HeaderImg" src="images/Logo.png" style="">
+  </div>
+<%if (success == true) { %>
+  <%if (access == "Manager") { %>
+  <div role="main" class="ui-content">
+
+    <section id="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">Managers Dashboard</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="main">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-3">
+             <!-- Appeneded in Manager from session -->
+             <div class="well">
+               <h4 >Welcome <%= manager %></h4>
+           </div>
+
+             <div class="list-group">
+               <a href="index.html" class="list-group-item active main-color-bg" style="Background-color:#556270; text-shadow:none;">
+                  Dashboard
+               </a>
+               <!-- Appeneded in GetUsersManager.js -->
+               <a href="" class="list-group-item">Staff <span class="badge" id="StaffNo1">203</span></a>
+               <a href="#Product" class="list-group-item">Products <span class="badge" id="ProductsNo1">12</span></a>
+               <a href="#Sales" class="list-group-item">Orders <span class="badge" id="OrdersNo1">3023</span></a>
+             </div>
+
+
+           </div>
+
+               <div class="table-responsive">
+                 <table class="table" style="Background-color:white;">
+                   <div class="panel-heading main-color-bg" style="Background-color:#556270; text-shadow:none; color:white; border: 1px solid white;">
+                     <h3 class="panel-title" >Staff</h3>
+                   </div>
+                    <thead>
+                       <tr>
+                         <th scope="col"style="padding-left:20px;">Name</th>
+                         <th scope="col">email</th>
+                         <th scope="col">address</th>
+                         <th scope="col">access</th>
+                       </tr>
+                     </thead>
+
+                     <!-- Appeneded in GetUsersManager.js -->
+                     <tbody id="tbodyStaff">
+
+                    </tbody>
+                 </table>
+             </div>
+
+
+           </div>
+</section>
+
+      <!-- Sepeate from sticky footer -->
+      <div style="height:100px;">
+        </div>
+
+
+  <!-- sticky footer -->
+<div data-role="footer" id="Cheffooter">
+  <div data-role="navbar" id="footerNav">
+    <ul id="MenuBar">
+    <li ><a href="#Sales" style="background: rgb(85, 98, 112,0.8);  break-word; border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/Home.png" alt="HomeIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/>Home</a></li>
+    <li ><a href="/Logout" style="background: rgb(85, 98, 112,0.8);  border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/return.png" alt="LogoutIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/>Logout</a></li>
+   </ul>
+  </div><!-- /navbar -->
+</div><!-- /navbar -->
+</div>
+<% } %>
+<% } %>
+</div><!-- /page two manager-->
+
+<!-- Start of third page: #Product manager -->
+<div data-role="page" id="Product" data-theme="a">
+
+
+  <div div data-role="header" id="header">
+    <img id="HeaderImg" src="images/Logo.png" style="">
+  </div>
+<%if (success == true) { %>
+  <%if (access == "Manager") { %>
+  <div role="main" class="ui-content">
+
+    <section id="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">Managers Dashboard</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="main">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-3">
+
+             <div class="well">
+               <h4 >Welcome <%= manager %></h4>
+           </div>
+
+             <div class="list-group">
+               <a href="index.html" class="list-group-item active main-color-bg" style="Background-color:#556270; text-shadow:none;">
+                  Dashboard
+               </a>
+               <a href="#Users" class="list-group-item">Staff <span class="badge" id="StaffNo2">203</span></a>
+               <a href="" class="list-group-item">Products <span class="badge" id="ProductsNo2">12</span></a>
+               <a href="#Sales" class="list-group-item">Orders <span class="badge" id="OrdersNo2">3023</span></a>
+             </div>
+
+
+           </div>
+
+               <div class="table-responsive">
+                 <table class="table" style="Background-color:white;">
+                   <div class="panel-heading main-color-bg" style="Background-color:#556270; text-shadow:none; color:white; border: 1px solid white;">
+                     <h3 class="panel-title" >Products</h3>
+                   </div>
+                    <thead>
+                       <tr>
+                         <th scope="col"style="padding-left:20px;">Name</th>
+                         <th scope="col">price</th>
+                         <th scope="col">stock</th>
+                         <th scope="col">enabled</th>
+                       </tr>
+                     </thead>
+                     <tbody id="tbodyProducts">
+
+                    </tbody>
+                 </table>
+             </div>
+
+           </div>
+</section>
+
+      <div style="height:100px;">
+        </div>
+
+
+<div data-role="footer" id="Cheffooter">
+  <div data-role="navbar" id="footerNav">
+    <ul id="MenuBar">
+    <li ><a href="#Sales" style="background: rgb(85, 98, 112,0.8);  break-word; border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/Home.png" alt="HomeIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/>Home</a></li>
+    <li ><a href="/Logout" style="background: rgb(85, 98, 112,0.8);  border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/return.png" alt="LogoutIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/>Logout</a></li>
+   </ul>
+  </div><!-- /navbar -->
+</div><!-- /navbar -->
+</div>
+<% } %>
+<% } %>
+</div><!-- /page three manager-->
+
+</body>

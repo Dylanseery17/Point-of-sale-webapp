@@ -1,0 +1,167 @@
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" href="css/Login.css">
+<link rel="stylesheet" href="css/Chef.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<%if (access == "SalesClerk") { %>
+<script src="javascripts/Get_Products.js"></script>
+<script src="javascripts/AddtoCart.js"></script>
+<script src="javascripts/UpdateCart.js"></script>
+<script src="javascripts/RemoveCart.js"></script>
+<% } %>
+<style type="text/css">
+
+</style>
+
+<body>
+
+
+<!-- Start of first page: #one login-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div data-role="page" id="SalesPage">
+
+<div div data-role="header" id="header">
+	<img id="HeaderImg" src="images/Logo.png" style="">
+</div>
+<%if (success == true) { %>
+    <%if (access == "SalesClerk") { %>
+	<div role="main" class="ui-content">
+
+
+    <section id="breadcrumb">
+      <div class="container"style="">
+        <ol class="breadcrumb">
+          <li class="active">Sales Dashboard</li>
+        </ol>
+      </div>
+    </section>
+
+    <div id="alert">
+
+    </div>
+
+
+        <div class="panel panel-default" id="ChefPanel" style="">
+          <div class="panel-heading" ">
+            <h3 class="panel-title">Products</h3>
+          </div>
+          <div class="panel-body" id="Productsdiv">
+
+          </div>
+          </div>
+
+
+
+      <div style="height:100px;">
+        </div>
+
+<!--
+		<p><a href="/Register" class="ui-btn ui-shadow ui-corner-all">New Memeber Register</a></p>
+
+	 /content -->
+   <div data-role="footer" id="Cheffooter">
+   	<div data-role="navbar" id="footerNav">
+       <ul id="MenuBar">
+       <li ><a href="#SalesPage" style="background: rgb(85, 98, 112,0.8);  break-word; border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/Home.png" alt="HomeIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/><p>Home</p></a></li>
+       <li ><a href="#Cart" style="background: rgb(85, 98, 112,0.8);  break-word; border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/shopping-cart.png" alt="Bar-ChartIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/><p  id="CartBar">Cart</p></a></li>
+      <li ><a href="/Logout" style="background: rgb(85, 98, 112,0.8);  border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/return.png" alt="LogoutIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/><p>Logout</p></a></li>
+   	 </ul>
+   	</div><!-- /navbar -->
+     <% } %>
+     <% } %>
+   </div><!-- /navbar -->
+
+
+</div><!-- /page one login -->
+</div>
+</div>
+
+
+
+<div data-role="page" id="Cart">
+
+
+  <div div data-role="header" id="header">
+  	<img id="HeaderImg" src="images/Logo.png" style="">
+  </div>
+  <%if (success == true) { %>
+      <%if (access == "SalesClerk") { %>
+  	<div role="main" class="ui-content">
+
+				<div id="CartAlerts"></div>
+					<div class="container">
+						<table id="cart" class="table table-hover table-condensed" style="background-color:white; text-shadow:none; border-radius:5px; border: 1px solid black;">
+											<thead>
+											<tr>
+												<th style="width:50%">Product</th>
+												<th style="width:10%">Price</th>
+												<th style="width:8%">Quantity</th>
+												<th style="width:22%" class="text-center">Subtotal</th>
+												<th style="width:10%"></th>
+											</tr>
+										</thead>
+										<tbody id="CartTable">
+										</tbody>
+										<tfoot>
+											<tr class="visible-xs">
+											</tr>
+											<tr>
+												<td colspan="2" class="hidden-xs"></td>
+												<td class="hidden-xs text-center"><strong id="Total">Total</strong></td>
+												<td><button href="#" class="btn btn-success btn-block" id="PlaceOrder" style="background-color:green;"><p style="color:white;">Place order </button><i class="fa fa-angle-right"></i></a></td>
+											</tr>
+										</tfoot>
+									</table>
+				</div>
+
+				<div style="height:100px;">
+	        </div>
+
+  <div data-role="footer" id="Cheffooter">
+   <div data-role="navbar" id="footerNav">
+      <ul id="MenuBar">
+			<li ><a href="#SalesPage" style="background: rgb(85, 98, 112,0.8);  break-word; border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/Home.png" alt="HomeIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/><p>Home</p></a></li>
+			<li ><a href="#Cart" style="background: rgb(85, 98, 112,0.8);  break-word; border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/shopping-cart.png" alt="Bar-ChartIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/><p  id="CartBar1">Cart</p></a></li>
+			<li ><a href="/Logout" style="background: rgb(85, 98, 112,0.8);  border: 2px solid white; color:white; text-shadow:none;"><img src="images/Icons/return.png" alt="LogoutIcon" class="img-responsive center-block" style="height:50px;  padding-bottom:10px;"/><p>Logout</p></a></li>  </ul>
+   </div><!-- /navbar -->
+    <% } %>
+    <% } %>
+  </div><!-- /navbar -->
+
+
+</div><!-- /page one login -->
+
+<!-- places order -->
+<script>
+	$( "#PlaceOrder" ).click(function() {
+		var newstock;
+		$.ajax({url: "/Cart/PlaceOrder", success: function(result){
+				document.getElementById("cart").innerHTML = '<div class="alert alert-success" role="alert">Order Placed Successfully</div>';
+
+				console.log("work");
+			}
+		});
+
+		$.ajax({
+            type: "GET",
+            dataType: 'json',
+            url: "/Cart",
+            success: function(response) {
+                response.forEach(function(products) {
+                  var id = products.id;
+                  newstock = products.NewStock;
+									//updates stock
+                   $.ajax({url: "/Products/Update/"+ id +"/"+ newstock +"", success: function(result){
+                       console.log(result);
+                      }});
+
+                  });
+            }
+    });
+
+
+	});
+</script>
+<script src="javascripts/Login.js"></script>

@@ -1,0 +1,41 @@
+<!-- Bootstrap and jquery mobile-->
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<!-- CSS-->
+<link rel="stylesheet" href="css/Login.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="javascripts/InputSecurity.js"></script>
+<body>
+
+<!-- Start of first page: #LoginPage login-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div data-role="page" id="LoginPage">
+
+		<!-- Header Design-->
+	<div div data-role="header" id="header">
+		<img id="HeaderImg" src="images/Logo.png" style="">
+	</div>
+
+
+	<div role="main" class="ui-content">
+
+		<!-- form -->
+		<div id="LoginForm">
+			<h2 id="Logintxt"><strong>Sign in</strong></h2>
+			<div id="form">
+		  <input type="text" id="Username" name="Username" placeholder="Username" style="width:80%;"/> <br>
+		  <input type="password" id="Password" name="Password" placeholder="Password" style="width:80%;" /> <br>
+			<!-- Calls login.js -->
+			<button class="ui-btn ui-corner-all" id="login">Sign in</button>
+			<div id="Error"><div>
+			<div>
+		</div>
+
+</div>
+
+</div><!-- end page one login -->
+</body>
+<!-- login.js -->
+<script src="javascripts/Login.js"></script>
