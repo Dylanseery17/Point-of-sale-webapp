@@ -3,11 +3,12 @@ const mysql = require('mysql');
 var router = express.Router();
 
 // Create connection
+// Create connection
 const db = mysql.createConnection({
-  host     : '127.0.0.1',
-  user     : 'root',
-  password : '',
-  database : 'projectdonuts'
+  host     : 'eu-cdbr-west-02.cleardb.net',
+  user     : 'bb95cdd6e1afcc',
+  password : '24536535',
+  database : 'heroku_adab502e65c006c'
 })
 
 // Select orders display json
