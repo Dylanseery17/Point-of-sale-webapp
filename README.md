@@ -17,6 +17,13 @@ This web applicaton is hosted on [heroku](https://dashboard.heroku.com/).
    - User : Cook
    - Pass : Cook
    
+## Technologys Used
+1. [Node JS](https://nodejs.org/en/)
+2. [JQuery Mobile](https://jquerymobile.com/)
+3. [EJS](https://ejs.co/)
+3. [MYSQL](https://www.mysql.com/)
+3. [Express JS](https://expressjs.com/)
+   
 ## Screenshots
 ![alt text](https://i.ibb.co/tpMKdjT/Untitled-1.png)
 ### Sales clerk
@@ -26,7 +33,4 @@ This web applicaton is hosted on [heroku](https://dashboard.heroku.com/).
 ### Chef
 ![alt text](https://i.ibb.co/f4gx7LC/Untitled-3.png)
 
-## Technologys Used
-1. [Node js](https://nodejs.org/en/)
-2. [JQuery Mobile](https://jquerymobile.com/)
-3. [EJS](https://ejs.co/)
+
