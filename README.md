@@ -22,6 +22,11 @@ This web applicaton is hosted on [heroku](https://dashboard.heroku.com/).
 ### Sales clerk
 ![alt text](https://i.ibb.co/PYYH0mK/Untitled-3.png)
 ### Manager
-![alt text](https://i.ibb.co/tpMKdjT/Untitled-1.png)
+![alt text](https://i.ibb.co/KyGwtj1/Untitled-3.png)
 ### Chef
-![alt text](https://i.ibb.co/tpMKdjT/Untitled-1.png)
+![alt text](https://i.ibb.co/f4gx7LC/Untitled-3.png)
+
+## Technologys Used
+1. [Node js](https://nodejs.org/en/)
+2. [JQuery Mobile](https://jquerymobile.com/)
+3. [EJS](https://ejs.co/)
